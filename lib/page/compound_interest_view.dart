@@ -152,74 +152,75 @@ class CompoundInterestView extends StatelessWidget {
   }
 
   _principalAmount() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Principal Amount',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(height: 6),
-        TextFormField(
-          controller: controller.principalAmtController.value,
-          keyboardType: TextInputType.number,
-          style: const TextStyle(color: Colors.black, fontSize: 16),
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-            NumberRangeInputFormatter(max: controller.maxLimit.value),
-          ],
-          decoration: const InputDecoration(
-            hintText: 'Enter principal amount',
-            hintStyle: TextStyle(color: Colors.grey),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              borderSide: BorderSide(color: Colors.green),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              borderSide: BorderSide(color: Colors.green, width: 2.0),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              borderSide: BorderSide(color: Colors.green),
+    return Obx(() =>Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Principal Amount',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          validator: (value) {
-            var selectedRoi = int.parse(controller.onSelectedRoi.value);
-            if (value == null || value.isEmpty) {
-              return 'Please enter an amount';
-            }
-            final amount = int.tryParse(value);
-            if (amount == null) {
-              return 'Please enter a valid number';
-            }
+          const SizedBox(height: 6),
+          TextFormField(
+            controller: controller.principalAmtController.value,
+            keyboardType: TextInputType.number,
+            style: const TextStyle(color: Colors.black, fontSize: 16),
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+              NumberRangeInputFormatter(max: controller.maxLimit.value),
+            ],
+            decoration: const InputDecoration(
+              hintText: 'Enter principal amount',
+              hintStyle: TextStyle(color: Colors.grey),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                borderSide: BorderSide(color: Colors.green),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                borderSide: BorderSide(color: Colors.green, width: 2.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                borderSide: BorderSide(color: Colors.green),
+              ),
+            ),
+            validator: (value) {
+              var selectedRoi = int.parse(controller.onSelectedRoi.value);
+              if (value == null || value.isEmpty) {
+                return 'Please enter an amount';
+              }
+              final amount = int.tryParse(value);
+              if (amount == null) {
+                return 'Please enter a valid number';
+              }
 
-            if (controller.onSelectedRoi.value != null) {
-              if (selectedRoi >= 1 && selectedRoi <= 3) {
-                if (amount < 10000) {
-                  return 'Amount should be at least 10000 for ROI 1-3';
-                }
-              } else if (selectedRoi >= 4 && selectedRoi <= 7) {
-                if (amount < 50000) {
-                  return 'Amount should be at least 50000 for ROI 4-7';
-                }
-              } else if (selectedRoi >= 8 && selectedRoi <= 12) {
-                if (amount < 75000) {
-                  return 'Amount should be at least 75000 for ROI 8-12';
-                }
-              } else if (selectedRoi >= 13 && selectedRoi <= 15) {
-                if (amount < 100000) {
-                  return 'Amount should be at least 100000 for ROI 13-15';
+              if (controller.onSelectedRoi.value != null) {
+                if (selectedRoi >= 1 && selectedRoi <= 3) {
+                  if (amount < 10000) {
+                    return 'Amount should be at least 10000 for ROI 1-3';
+                  }
+                } else if (selectedRoi >= 4 && selectedRoi <= 7) {
+                  if (amount < 50000) {
+                    return 'Amount should be at least 50000 for ROI 4-7';
+                  }
+                } else if (selectedRoi >= 8 && selectedRoi <= 12) {
+                  if (amount < 75000) {
+                    return 'Amount should be at least 75000 for ROI 8-12';
+                  }
+                } else if (selectedRoi >= 13 && selectedRoi <= 15) {
+                  if (amount < 100000) {
+                    return 'Amount should be at least 100000 for ROI 13-15';
+                  }
                 }
               }
-            }
-            return null;
-          },
-        ),
-      ],
+              return null;
+            },
+          ),
+        ],
+      ),
     );
   }
 

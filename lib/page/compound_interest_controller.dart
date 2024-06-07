@@ -48,7 +48,7 @@ class CompoundInterestController extends GetxController{
        numberOfTimesOptions.value = compoundInterestModel.value.numberOfTimes!.values.map((e) => e.value).toList();// 1,2,4
        numberOfYearsOptions.value = compoundInterestModel.value.numberOfYears!.values.map((e) => e.value).toList(); // 1 to 30
 
-      maxLimit.value = int.parse(compoundInterestModel.value.principalAmount!.maxAmt) ;
+        maxLimit.value = int.parse(compoundInterestModel.value.principalAmount!.maxAmt) ;
      }
 
    setNoOfTimeList(String? roi) {
