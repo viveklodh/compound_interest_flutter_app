@@ -1,0 +1,90 @@
+{
+  "rate_of_interest": {
+    "text_color": "black",
+    "text_size": "16",
+    "label_text": "Rate of Interest (%)",
+    "roi_values": [
+      {"label": "1", "value": "1"},
+      {"label": "2", "value": "2"},
+      {"label": "3", "value": "3"},
+      {"label": "4", "value": "4"},
+      {"label": "5", "value": "5"},
+      {"label": "6", "value": "6"},
+      {"label": "7", "value": "7"},
+      {"label": "8", "value": "8"},
+      {"label": "9", "value": "9"},
+      {"label": "10", "value": "10"},
+      {"label": "11", "value": "11"},
+      {"label": "12", "value": "12"},
+      {"label": "13", "value": "13"},
+      {"label": "14", "value": "14"},
+      {"label": "15", "value": "15"}
+    ]
+  },
+
+  "principal_amount": {
+    "hint_text": "Enter principal amount",
+    "text_color": "black",
+    "text_size": "16",
+    "min_amt": {
+      "1to3": "10000",
+      "4to7": "50000",
+      "8to12": "75000",
+      "other": "100000"
+    },
+    "max_amt": "10000000",
+    "error_message": "Amount must be between the #minimum# and #maximum# limits"
+  },
+
+  "number_of_times": {
+    "label_text": "Number of Times to Compound per Year",
+    "text_color": "black",
+    "text_size": "16",
+    "values": [{"label": "1 time", "value": "1"},{"label": "2 times", "value": "2"},{"label": "4 times", "value": "4"}]
+  },
+
+  "number_of_years": {
+    "label_text": "Number of Years",
+    "text_color": "black",
+    "text_size": "16",
+    "values": [
+      {"label": "1 year", "value": "1"},
+      {"label": "2 years", "value": "2"},
+      {"label": "3 years", "value": "3"},
+      {"label": "4 years", "value": "4"},
+      {"label": "5 years", "value": "5"},
+      {"label": "6 years", "value": "6"},
+      {"label": "7 years", "value": "7"},
+      {"label": "8 years", "value": "8"},
+      {"label": "9 years", "value": "9"},
+      {"label": "10 years", "value": "10"},
+      {"label": "11 years", "value": "11"},
+      {"label": "12 years", "value": "12"},
+      {"label": "13 years", "value": "13"},
+      {"label": "14 years", "value": "14"},
+      {"label": "15 years", "value": "15"},
+      {"label": "16 years", "value": "16"},
+      {"label": "17 years", "value": "17"},
+      {"label": "18 years", "value": "18"},
+      {"label": "19 years", "value": "19"},
+      {"label": "20 years", "value": "20"},
+      {"label": "21 years", "value": "21"},
+      {"label": "22 years", "value": "22"},
+      {"label": "23 years", "value": "23"},
+      {"label": "24 years", "value": "24"},
+      {"label": "25 years", "value": "25"},
+      {"label": "26 years", "value": "26"},
+      {"label": "27 years", "value": "27"},
+      {"label": "28 years", "value": "28"},
+      {"label": "29 years", "value": "29"},
+      {"label": "30 years", "value": "30"}
+    ]
+  },
+
+  "output_value": {
+    "text_color": "black",
+    "label_text": "Compound Interest",
+    "text_size": "16",
+    "mode_of_display": "pop_up"
+  }
+}
